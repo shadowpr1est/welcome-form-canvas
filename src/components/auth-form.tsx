@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -141,9 +142,12 @@ export const AuthForm = ({ isSignUp = false, onToggleMode }: AuthFormProps) => {
       {/* Forgot Password Link (Sign In Only) */}
       {!isSignUp && (
         <div className="text-right">
-          <Button variant="link" className="p-0 h-auto text-sm text-primary hover:text-primary-dark">
+          <Link
+            to="/forgot-password"
+            className="text-sm text-primary hover:text-primary-dark transition-colors"
+          >
             Forgot password?
-          </Button>
+          </Link>
         </div>
       )}
 
